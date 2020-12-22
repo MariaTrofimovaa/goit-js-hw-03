@@ -10,12 +10,19 @@ const products = [
 const getAllPropValues = function (arr, prop) {
   let result = [];
   for (const item of arr) {
-    if (typeof item[prop] !== "undefined") {
-      result.push(item[prop]);
-    }
+    item[prop] ? result.push(item[prop]) : "";
   }
   return result;
 };
+
+// 5) Вместо
+// if (typeof item[prop] !== "undefined") {
+// result.push(item[prop]);
+// }
+
+// лучше
+// item[prop] ? result.push(item[prop])
+// : ""
 
 /*
  * Вызовы функции для проверки работоспособности твоей реализации.
